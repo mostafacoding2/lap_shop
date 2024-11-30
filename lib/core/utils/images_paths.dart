@@ -1,0 +1,41 @@
+class ImagesPaths{
+
+  static const  String OnBoardingScreen1='assets/images/onboarding1.jpg';
+  static const String OnBoardingScreen2='assets/images/onboarding2.jpg';
+  static const String OnBoardingScreen3='assets/images/onboarding3.jpg';
+  static const String logo='assets/images/logo.png';
+  static String wireless='assets/images/wireless headset.png';
+  static String ps4_console_blue='assets/images/ps4_console_blue_1.png';
+  static String ps4_console_white='assets/images/ps4_console_white_1.png';
+  static String iphone='assets/images/iphone.jpg';
+  static String iphone1='assets/images/iphone1.jpg';
+  static String iphone2='assets/images/iphone2.jpg';
+  static String iphone3='assets/images/iphone3.jpg';
+  static String iphone4='assets/images/iphone4.jpg';
+  static String laptop_hp='assets/images/laptop_hp.jpg';
+  static String laptopdell='assets/images/laptopdell.jpg';
+  static String dell2='assets/images/dell2.jpg';
+  static String dell3='assets/images/dell3.jpg';
+  static String mac='assets/images/mac.jpg';
+  static String mac2='assets/images/mac2.jpg';
+  static String lenovo='assets/images/lenovo.jpg';
+  static String lenovo2='assets/images/lenovo2.jpg';
+  static String redme='assets/images/redme.jpg';
+  static String redme2='assets/images/redme2.jpg';
+  static String redme4='assets/images/redme4.jpg';
+  static String relme='assets/images/relme.jpg';
+  static String camera='assets/images/camera.jpg';
+  static String camera1='assets/images/camera1.jpg';
+  static String camera3='assets/images/camera3.jpg';
+  static String smart='assets/images/smart.jpg';
+  static String smart1='assets/images/smart1.jpg';
+  static String smart2='assets/images/smart2.jpg';
+  static String paypal='assets/images/download.png';
+  static String card='assets/images/image_card.jpeg';
+  static String banner1='assets/images/banner1.png';
+  static String banner2='assets/images/banner2.png';
+  static String banner3='assets/images/banner3.png';
+  static String banner4='assets/images/banner4.png';
+  static String banner5='assets/images/banner5.png';
+  static String banner6='assets/images/banner6.png';
+}

@@ -1,4 +1,3 @@
-import 'package:ultra_shop/features/ApplyShop/presentation/screens/applies%20shops_screen.dart';
 import 'package:ultra_shop/features/Home/presentation/screens/home_screen.dart';
 import 'package:ultra_shop/features/Home/presentation/screens/profile_screen.dart';
 import 'package:ultra_shop/features/Order/presentation/screens/order_screen.dart';
@@ -15,7 +14,6 @@ class HomeCubit extends Cubit<HomeState> {
     const CartScreen(),
     const OrderScreen(),
     const ProfileScreen(),
-     AppliesShopsScreen()
   ];
   void changeBottom(int index)
   {

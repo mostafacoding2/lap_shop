@@ -6,8 +6,6 @@ import 'package:ultra_shop/core/utils/images_paths.dart';
 import 'package:ultra_shop/core/utils/shared%20_pref.dart';
 import 'package:ultra_shop/features/Account/presentation/screens/change_password_screen.dart';
 import 'package:ultra_shop/features/Account/presentation/controller/account_cubit.dart';
-import 'package:ultra_shop/features/ApplyShop/presentation/controller/applyshop_cubit.dart';
-import 'package:ultra_shop/features/ApplyShop/presentation/screens/create_apply_shop_screen.dart';
 import 'package:ultra_shop/features/Home/presentation/screens/add_role_screen.dart';
 import 'package:ultra_shop/features/Home/presentation/widgets/custom_profile_item.dart';
 import 'package:ultra_shop/features/Home/presentation/widgets/item_text_profile.dart';

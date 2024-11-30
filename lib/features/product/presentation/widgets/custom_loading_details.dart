@@ -81,26 +81,7 @@ class CustomloadingDetails extends StatelessWidget {
                 height: 24.h,
                 width: 24.w,
               )),
-          SizedBox(height: 16.h),
-          Shimmer.fromColors(
-            baseColor: Colors.grey[300]!,
-            highlightColor: Colors.grey[100]!,
-            child: Container(
-              width: double.infinity,
-              height: 7.h,
-              color: Colors.white,
-            ),
-          ),
-          SizedBox(height: 20.h),
-          Shimmer.fromColors(
-            baseColor: Colors.grey[300]!,
-            highlightColor: Colors.grey[100]!,
-            child: Container(
-              width: double.infinity,
-              height: 7.h,
-              color: Colors.white,
-            ),
-          ),
+
           SizedBox(height: 20.h),
           Shimmer.fromColors(
             baseColor: Colors.grey[300]!,

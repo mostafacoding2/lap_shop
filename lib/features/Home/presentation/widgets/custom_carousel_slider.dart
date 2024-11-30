@@ -10,35 +10,35 @@ import '../../../product/presentation/screens/product_details_screen.dart';
 import '../../../product/presentation/widgets/custom_product.dart';
 import 'custom_discount.dart';
 
-
 class CustomCarouselSlider extends StatelessWidget {
   const CustomCarouselSlider({super.key});
   @override
   Widget build(BuildContext context) {
-    return SizedBox(width:MediaQuery.sizeOf(context).width,
-      height: 200.h,
-      child:   CarouselSlider(
-              items: banners
-                  .map((e) => Image.asset(e,fit: BoxFit.fill,width:MediaQuery.sizeOf(context).width,))
-                  .toList(),
-              options: CarouselOptions(
-                aspectRatio: 0.9,
-                viewportFraction: 1,
-                initialPage: 0,
-                enableInfiniteScroll: true,
-                reverse: false,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 2),
-                autoPlayAnimationDuration: const Duration(seconds: 1),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                scrollDirection: Axis.horizontal,
-              ))
-
-    );
+    return SizedBox(
+        width: MediaQuery.sizeOf(context).width,
+        height: 200.h,
+        child: CarouselSlider(
+            items: banners
+                .map((e) => Image.asset(
+                      e,
+                      fit: BoxFit.fill,
+                      width: MediaQuery.sizeOf(context).width,
+                    ))
+                .toList(),
+            options: CarouselOptions(
+              aspectRatio: 0.9,
+              viewportFraction: 1,
+              initialPage: 0,
+              enableInfiniteScroll: true,
+              reverse: false,
+              autoPlay: true,
+              autoPlayInterval: const Duration(seconds: 2),
+              autoPlayAnimationDuration: const Duration(seconds: 1),
+              autoPlayCurve: Curves.fastOutSlowIn,
+              scrollDirection: Axis.horizontal,
+            )));
   }
 }
-
-
 
 class BestSeller extends StatelessWidget {
   const BestSeller({super.key});
@@ -51,60 +51,38 @@ class BestSeller extends StatelessWidget {
         create: (context) => ProductCubit()..getAllWorkspacesbySortReview(),
         child: BlocBuilder<ProductCubit, ProductState>(
           builder: (context, state) {
-
             return state is GetAllProductLoadingState
-                ? OffersShimmers():
-                ListView.builder(
+                ? OffersShimmers()
+                : ListView.builder(
                     clipBehavior: Clip.none,
                     scrollDirection: Axis.horizontal,
-                    itemCount: ProductCubit.get(context).WorkspacesbySortReview.length,
-                    itemBuilder: (context,index){
-                  var cubit = ProductCubit.get(context).WorkspacesbySortReview[index];
+                    itemCount:
+                        ProductCubit.get(context).WorkspacesbySortReview.length>3?3:ProductCubit.get(context).WorkspacesbySortReview.length,
+                    itemBuilder: (context, index) {
+                      var cubit = ProductCubit.get(context)
+                          .WorkspacesbySortReview[index];
 
-                  return     CustomProduct(
-                    onTap: () {
-                      navigateTo(
-                          context,
-                          ProductDetailsScreen(
-                            comming: "products",
-                            id: cubit.id!,
-                          ));
-                    },
-                    price: "${cubit.priceProd}",
-                    description: cubit.descrip!,
-                    urlImage: cubit.imageUrls![0],
-                    nameDevice: cubit.itemName!,
-                    rating: cubit.averageRate == 0
-                        ? 0
-                        : cubit.averageRate!,
-                  );
-                });
+                      return CustomProduct(
+                        onTap: () {
+                          navigateTo(
+                              context,
+                              ProductDetailsScreen(
+                                comming: "products",
+                                id: cubit.id!,
+                              ));
+                        },
+                        price: "${cubit.priceProd}",
+                        description: cubit.descrip!,
+                        urlImage: cubit.imageUrls![0],
+                        nameDevice: cubit.itemName!,
+                        rating: cubit.averageRate == 0 ? 0 : cubit.averageRate!,
+                      );
+                    });
 
-
-
-
-
-
-
-
-             Text("not found ");
+            Text("not found ");
           },
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -45,7 +45,7 @@ class ProductDetailsScreen extends StatelessWidget {
                             data: data!, id: id),
                       )
                     : Center(
-                        child: CustomloadingDetails(),
+                        child: Center(child: CircularProgressIndicator(color:AppColors.primaryColor),),
                       )),
           );
         },

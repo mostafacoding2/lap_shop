@@ -53,7 +53,7 @@ final  GlobalKey<FormState> fromkey;
                       onTap: () {
                         cubit.changePasswordVisibility();
                       },
-                      child: Icon(cubit.icon),
+                      child: Icon(cubit.icon,color:AppColors.myWhite),
                     ),
                     controller: oldPasswordController,
                     label: "OldPassword",

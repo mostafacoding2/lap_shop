@@ -22,7 +22,7 @@ class CategoryProductsBody extends StatelessWidget {
       lenghtList==0? SizedBox():
       Expanded(
           child:GridView.builder(itemCount:lenghtList ,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.9,mainAxisSpacing: 4,crossAxisSpacing: 4,), itemBuilder: (context,index){
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,childAspectRatio: 0.8,mainAxisSpacing: 4,crossAxisSpacing: 4,), itemBuilder: (context,index){
                 return  CustomProduct(
                     onTap:(){navigateTo(context,
                         ProductDetailsScreen(

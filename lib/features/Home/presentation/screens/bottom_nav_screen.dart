@@ -10,6 +10,7 @@ import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 import '../../../../core/utils/app_color.dart';
 import '../../../../core/utils/constants.dart';
+import '../../../Account/presentation/screens/login_screen.dart';
 import '../manger/cubit/home_cubit.dart';
 class BottomNavScreen extends StatefulWidget {
   int? currentIndex;
@@ -36,6 +37,24 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           var cubit = HomeCubit.get(context);
+          if (cubit.currentIndex == 1 && token == '') {
+            Future.delayed(Duration.zero, () {
+              navigateAndReplacement(context, LoginScreen());
+            });
+          }
+          if (cubit.currentIndex == 2 && token == '') {
+            Future.delayed(Duration.zero, () {
+              navigateAndReplacement(context, LoginScreen());
+
+            });
+          }
+
+          if (cubit.currentIndex == 3 && token == '') {
+            Future.delayed(Duration.zero, () {
+              navigateAndReplacement(context, LoginScreen());
+
+            });
+          }
           if (widget.currentIndex != null) {
             cubit.currentIndex = widget.currentIndex!;
             widget.currentIndex = null;

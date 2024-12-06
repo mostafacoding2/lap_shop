@@ -223,7 +223,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
                       ),
                     ),
                     Spacer(),
-                    (role == AppString.seller || role == AppString.admin)?SizedBox() : Row(
+                    (role == AppString.seller || role == AppString.admin||token=='')?SizedBox() : Row(
                       children: [
                         GestureDetector(
                           onTap:(){
@@ -583,7 +583,7 @@ class _ProductDetailsBodyState extends State<ProductDetailsBody> {
         SizedBox(
           height: 5.h,
         ),
-        (role == AppString.seller || role == AppString.admin)
+        (role == AppString.seller || role == AppString.admin|| token=='')
             ? SizedBox(
                 height: 0,
               )

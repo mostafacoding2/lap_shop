@@ -33,7 +33,7 @@ class _AddRoleScreenState extends State<AddRoleScreen> {
       ),
     );
     return SafeArea(
-        child: Scaffold(
+        child: Scaffold(backgroundColor: AppColors.myDark,
             body: Form(
       key: fromkey,
       child: AddRoleBody(

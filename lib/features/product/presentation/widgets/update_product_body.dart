@@ -32,7 +32,6 @@ class UpdateProductBody extends StatefulWidget {
       required this.stockProdcontroller,
       required this.solditemsProdcontroller,
       required this.quantityProdcontroller,
-      required this.nameShopcontroller,
       required this.formkey});
   final TextEditingController categoryNamecontroller;
   final TextEditingController ItemNamecontroller;
@@ -41,7 +40,6 @@ class UpdateProductBody extends StatefulWidget {
   final TextEditingController stockProdcontroller;
   final TextEditingController solditemsProdcontroller;
   final TextEditingController quantityProdcontroller;
-  final TextEditingController nameShopcontroller;
   final GlobalKey<FormState> formkey;
 
   String? categoryName;
@@ -222,18 +220,6 @@ class _UpdateProductBodyState extends State<UpdateProductBody> {
                   const SizedBox(
                     height: 20,
                   ),
-                  CustomTextFormField(
-                      validator: (data) {
-                        if (data?.isEmpty ?? true) {
-                          return "You Must enter NameShop ";
-                        } else {
-                          return null;
-                        }
-                      },
-                      label: "NameShop",
-                      controller: widget.nameShopcontroller,
-                      obscureText: false,
-                      keyboardType: TextInputType.text),
                   const SizedBox(
                     height: 20,
                   ),
@@ -323,7 +309,7 @@ class _UpdateProductBodyState extends State<UpdateProductBody> {
                 return CustomButton(
                   text: "update product",color: AppColors.primaryColor,width: 300.w,
                   isLoading:
-                      state is UpdateProductIdLoadingState ? true : false,
+                      state is UpdateProductIdLoadingState ?  false:true,
                   onTap: () {
                     if (widget.formkey.currentState!.validate()) {
                       int priceProd =
@@ -346,7 +332,7 @@ class _UpdateProductBodyState extends State<UpdateProductBody> {
                             stockProd: stockProd,
                             solditemsProd: solditemsProd,
                             quantityProd: 1,
-                            nameShop: widget.nameShopcontroller.text);
+                            nameShop:"Lap Shop");
                       } else {
                         ProductCubit.get(context).updateProductId(
                             id: widget.id!,
@@ -357,7 +343,7 @@ class _UpdateProductBodyState extends State<UpdateProductBody> {
                             stockProd: stockProd,
                             solditemsProd: solditemsProd,
                             quantityProd: quantityProd,
-                            nameShop: widget.nameShopcontroller.text);
+                            nameShop:"Lap Shop");
                       }
                     }
                   },

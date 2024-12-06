@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ultra_shop/features/Home/presentation/screens/bottom_nav_screen.dart';
 import '../../../../core/utils/app_color.dart';
 import '../../../../core/utils/constants.dart';
 import '../../../../core/utils/images_paths.dart';
@@ -52,7 +53,17 @@ class WelcomeBody extends StatelessWidget {
           isColor: false,
           text: 'Login',
           color: AppColors.myWhite,
+        ),     SizedBox(
+          height: 16.h,
+        ),     CustomButton(width:MediaQuery.sizeOf(context).width,
+          onTap: () {
+            navigateTo(context, BottomNavScreen(currentIndex: null));
+          },
+          isColor: false,
+          text: 'guest',
+          color: AppColors.myGreen2,
         ),
+
         SizedBox(
           height: 33.h,
         ),

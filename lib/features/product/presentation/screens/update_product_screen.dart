@@ -43,7 +43,6 @@ class _UpDateProductScreenState extends State<UpDateProductScreen> {
     stockProdcontroller.dispose();
     solditemsProdcontroller.dispose();
     quantityProdcontroller.dispose();
-    nameShopcontroller.dispose();
     // TODO: implement dispose
     super.dispose();
   }
@@ -55,7 +54,6 @@ class _UpDateProductScreenState extends State<UpDateProductScreen> {
         statusBarIconBrightness: Brightness.light,
       ),
     );
-    nameShopcontroller.text=widget.nameShop!;
     solditemsProdcontroller.text="${widget.solditemsProd!}";
     quantityProdcontroller.text= "${widget.quantityProd!}";
     Descripcontroller.text=widget.descrip!;
@@ -63,7 +61,8 @@ class _UpDateProductScreenState extends State<UpDateProductScreen> {
     priceProdcontroller.text="${widget.priceProd!}";
     return  SafeArea(
       child: Scaffold(
-        body:     UpdateProductBody(categoryName: widget.categoryName, id: widget.id, nameShop: widget.nameShop, itemName: widget.itemName, priceProd: widget.priceProd, descrip: widget.descrip, solditemsProd: widget.solditemsProd, quantityProd: widget.quantityProd, categoryNamecontroller: categoryNamecontroller, ItemNamecontroller: ItemNamecontroller, priceProdcontroller: priceProdcontroller, Descripcontroller: Descripcontroller, stockProdcontroller: stockProdcontroller, solditemsProdcontroller: solditemsProdcontroller, quantityProdcontroller: quantityProdcontroller, nameShopcontroller: nameShopcontroller, formkey: formkey)
+        backgroundColor: AppColors.myDark,
+        body:     UpdateProductBody(categoryName: widget.categoryName, id: widget.id, nameShop: widget.nameShop, itemName: widget.itemName, priceProd: widget.priceProd, descrip: widget.descrip, solditemsProd: widget.solditemsProd, quantityProd: widget.quantityProd, categoryNamecontroller: categoryNamecontroller, ItemNamecontroller: ItemNamecontroller, priceProdcontroller: priceProdcontroller, Descripcontroller: Descripcontroller, stockProdcontroller: stockProdcontroller, solditemsProdcontroller: solditemsProdcontroller, quantityProdcontroller: quantityProdcontroller, formkey: formkey)
 
       ),
     );

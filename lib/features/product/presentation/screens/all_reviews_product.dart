@@ -29,7 +29,7 @@ class AllReviewsProduct extends StatelessWidget {
     return
            SafeArea(
             child: Scaffold(
-              bottomNavigationBar:                      GestureDetector(
+              bottomNavigationBar:              role=="Admin" ? const SizedBox():           GestureDetector(
                 onTap: () {
                   navigateAndReplacement(
                       context, ReviewScreen(id: id));

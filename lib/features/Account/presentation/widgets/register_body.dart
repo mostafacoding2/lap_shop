@@ -1,8 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../core/Theme/light_theme.dart';
 import '../../../../core/utils/app_color.dart';
 import '../../../../core/utils/app_string.dart';
@@ -41,11 +39,9 @@ class RegisterBody extends StatefulWidget {
   final TextEditingController streetController;
   final TextEditingController cityController;
   final GlobalKey<FormState> formKey;
-
   @override
   State<RegisterBody> createState() => _RegisterBodyState();
 }
-
 class _RegisterBodyState extends State<RegisterBody> {
   @override
   Widget build(BuildContext context) {
@@ -55,7 +51,6 @@ class _RegisterBodyState extends State<RegisterBody> {
         builder: (context, state) {
           var Data = CreateCustomerCubit.get(context);
           return Column(
-
             children: [
                SizedBox(height: 30.h),
               CustomTextFormField(

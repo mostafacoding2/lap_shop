@@ -17,7 +17,7 @@ class SelectRole extends StatelessWidget {
        statusBarIconBrightness: Brightness.light,
      ),
    );
-    return Scaffold(
+    return Scaffold(backgroundColor: AppColors.myDark,
       body: SelectRoleBody(number: number, roles: roles),
     );
   }

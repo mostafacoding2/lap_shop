@@ -9,6 +9,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 import '../../../../core/utils/app_color.dart';
+import '../../../../core/utils/constants.dart';
 import '../manger/cubit/home_cubit.dart';
 class BottomNavScreen extends StatefulWidget {
   int? currentIndex;
@@ -101,12 +102,20 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
                         isSelected: 0 == cubit.currentIndex,
                         title: "Home",
                       ),
-                      buildSalomonBottomBarItem(
+                      role=="Admin" ?  buildSalomonBottomBarItem(
+                        icon: Icons.store,
+                        isSelected: 1 == cubit.currentIndex,
+                        title: "products",
+                      ):   buildSalomonBottomBarItem(
                         icon: Icons.shopping_cart,
                         isSelected: 1 == cubit.currentIndex,
                         title: "Cart",
                       ),
-                      buildSalomonBottomBarItem(
+                      role=="Admin" ?  buildSalomonBottomBarItem(
+                        icon: Icons.category,
+                        isSelected: 1 == cubit.currentIndex,
+                        title: "category",
+                      ):    buildSalomonBottomBarItem(
                         icon: Icons.shopping_cart_checkout_sharp,
                         isSelected: 2 == cubit.currentIndex,
                         title: "my order",

@@ -43,7 +43,7 @@ class CustomAppBarHome extends StatelessWidget {
           Spacer(
             flex: 8,
           ),
-          (role == AppString.seller)?SizedBox(child:Text(role, style: lightTheme.textTheme.labelSmall!.apply(
+          (role == AppString.admin)?SizedBox(child:Text(role, style: lightTheme.textTheme.labelSmall!.apply(
             fontSizeFactor: 1.sp,
             color: AppColors.myWhite,
           ),)):

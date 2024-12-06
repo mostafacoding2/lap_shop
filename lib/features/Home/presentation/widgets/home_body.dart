@@ -49,7 +49,7 @@ class _HomeBodyState extends State<HomeBody> {
       children: [
         CustomAppBarHome(),
 
-        CustomCarouselSlider(),
+        role=="Admin" ? const SizedBox():   CustomCarouselSlider(),
         SizedBox(height: 10.h,),
         Divider(color: AppColors.myDarkGrey2,),
 
@@ -80,18 +80,19 @@ class _HomeBodyState extends State<HomeBody> {
         Divider(color: AppColors.myDarkGrey2,),
 
 
-        HeaderTitle(arrow:false,
+        role=="Admin" ? const SizedBox():      HeaderTitle(arrow:false,
           onPressed: () {
             navigateTo(context, ProductsScreen());
           },
           title: 'Best Seller',
-        ),Divider(color: AppColors.myDarkGrey2,),
+        ),
+        role=="Admin" ? const SizedBox():Divider(color: AppColors.myDarkGrey2,),
 
        SizedBox(
           height: 10.h,
         ),
-        BestSeller(),
-        Divider(color: AppColors.myDarkGrey2,),
+        role=="Admin" ? const SizedBox():     BestSeller(),
+        role=="Admin" ? const SizedBox():  Divider(color: AppColors.myDarkGrey2,),
 
         SizedBox(height: 10.h,),
       ],

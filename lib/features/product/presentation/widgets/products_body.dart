@@ -19,7 +19,7 @@ class ProductsBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ProductCubit()..getAllProduct(),
-      child: Scaffold(
+      child: Scaffold(backgroundColor: AppColors.myDark,
         floatingActionButton: role == AppString.admin
             ? FloatingActionButton(
                 child: Icon(

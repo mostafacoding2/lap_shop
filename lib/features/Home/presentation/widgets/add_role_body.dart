@@ -74,31 +74,34 @@ class AddRoleBody extends StatelessWidget {
               SizedBox(
                 height: 50.h,
               ),
-              BlocProvider(
-                create: (context) => AccountCubit(),
-                child: BlocConsumer<AccountCubit, AccountState>(
-                  listener: (context,state){
-                    if(state is AddRoleSuccessState){
-                      flutterToast(message: "Success Add Role", success: true);
-                      navigateTo(context, BottomNavScreen(currentIndex: 3,));   }
-                    if(state is AddRoleErrorState){
-                      flutterToast(message: state.errormessage, success: false);
-                    }
-                  },
-                  builder: (context, state) {
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: BlocProvider(
+                  create: (context) => AccountCubit(),
+                  child: BlocConsumer<AccountCubit, AccountState>(
+                    listener: (context,state){
+                      if(state is AddRoleSuccessState){
+                        flutterToast(message: "Success Add Role", success: true);
+                        navigateTo(context, BottomNavScreen(currentIndex: 3,));   }
+                      if(state is AddRoleErrorState){
+                        flutterToast(message: state.errormessage, success: false);
+                      }
+                    },
+                    builder: (context, state) {
 
-                    return CustomButton(
-                      isLoading: state is AddRoleLoadingState?true:false,
-                      text: "Add Role",color: AppColors.primaryColor,width: 300.w
-                      ,
-                      onTap: () {
-                        if(fromkey.currentState!.validate()){
-                          AccountCubit.get(context).addRole(userName: userNameController.text, roleName: roleNameController.text);
+                      return CustomButton(
+                        isLoading: state is AddRoleLoadingState?false:true,
+                        text: "Add Role",color: AppColors.primaryColor,width: 300.w
+                        ,
+                        onTap: () {
+                          if(fromkey.currentState!.validate()){
+                            AccountCubit.get(context).addRole(userName: userNameController.text, roleName: roleNameController.text);
 
-                        }
-                      },
-                    );
-                  },
+                          }
+                        },
+                      );
+                    },
+                  ),
                 ),
               )
             ],

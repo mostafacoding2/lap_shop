@@ -177,36 +177,35 @@ class _CategoryDetailsBodyState extends State<CategoryDetailsBody> {
               title: 'Products',
             ),        Divider(color: AppColors.myDarkGrey2,),
 
-            SizedBox(
-                height: 700.h,
-                child: GridView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemCount: widget.categoryModel.productDtOs.length,
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 0.8,
-                      mainAxisSpacing: 4,
-                      crossAxisSpacing: 4,
-                    ),
-                    itemBuilder: (context, index) {
+            GridView.builder(shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                itemCount: widget.categoryModel.productDtOs.length,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.8,
+                  mainAxisSpacing: 4,
+                  crossAxisSpacing: 4,
+                ),
+                itemBuilder: (context, index) {
 
 
-                      var cubit = widget.categoryModel.productDtOs[index];
-                      return CustomProduct(
-                        onTap: () {
-                          navigateTo(
-                              context,
-                              ProductDetailsScreen(
-                                  comming: "shop", id: cubit.id!));
-                        },
-                        price: "${cubit.priceProd}",
-                        description: cubit.descrip!,
-                        urlImage: cubit.imageUrls![0],
-                        nameDevice: cubit.itemName!,
-                        rating:
-                        cubit.averageRate == 0 ? 0 : cubit.averageRate!,
-                      );
-                    }))
+                  var cubit = widget.categoryModel.productDtOs[index];
+                  return CustomProduct(
+                    onTap: () {
+                      navigateTo(
+                          context,
+                          ProductDetailsScreen(
+                              comming: "shop", id: cubit.id!));
+                    },
+                    price: "${cubit.priceProd}",
+                    description: cubit.descrip!,
+                    urlImage: cubit.imageUrls![0],
+                    nameDevice: cubit.itemName!,
+                    rating:
+                    cubit.averageRate == 0 ? 0 : cubit.averageRate!,
+                  );
+                })
           ],
         ),
       ),

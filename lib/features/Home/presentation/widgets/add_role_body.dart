@@ -57,19 +57,6 @@ class AddRoleBody extends StatelessWidget {
                 label: "userName",
               ),
               SizedBox(height: 30.h,),
-              CustomTextFormField(
-                validator: (data) {
-                  if (data?.isEmpty ?? true) {
-                    return "You Must Enter nameRole ";
-                  } else {
-                    return null;
-                  }
-                },
-                controller:roleNameController ,
-                obscureText: false,
-                keyboardType: TextInputType.text,
-                label: "nameRole",
-              ),
 
               SizedBox(
                 height: 50.h,
@@ -95,7 +82,7 @@ class AddRoleBody extends StatelessWidget {
                         ,
                         onTap: () {
                           if(fromkey.currentState!.validate()){
-                            AccountCubit.get(context).addRole(userName: userNameController.text, roleName: roleNameController.text);
+                            AccountCubit.get(context).addRole(userName: userNameController.text, roleName: "Admin");
 
                           }
                         },

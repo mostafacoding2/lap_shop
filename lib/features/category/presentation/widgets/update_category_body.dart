@@ -47,62 +47,6 @@ class _UpdateCategoryBodyState extends State<UpdateCategoryBody> {
             child: Column(
               children: [
                 SizedBox(height: 30.h,),
-                Container(
-
-                  padding:
-                  EdgeInsets.only(top: 10.h, bottom: 10.h, left: 8.w, right: 8.w),
-                  margin: EdgeInsets.symmetric(vertical: 5.h, horizontal: 5.w),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12.r),
-                      color: AppColors.myWhite,
-                      boxShadow: [
-                        BoxShadow(
-                            color: Color.fromRGBO(191, 214, 215, 1),
-                            offset: Offset(1, 4),
-                            spreadRadius: 0,
-                            blurRadius: 1)
-                      ]),
-                  child: Row(
-
-                    children:[
-                      Text("deleted:  ",style: lightTheme.textTheme.titleSmall!.apply(
-                        fontSizeFactor: 1.sp,
-                        color: AppColors.myDark,
-                      ),),
-                      Text("$selectedChoice",style: lightTheme.textTheme.titleSmall!.apply(
-                        fontSizeFactor: 1.sp,
-                        color: AppColors.myOrange,
-                      ),),SizedBox(width: 10.w,),
-                      Radio(
-                        value: true,activeColor: AppColors.myGreen,
-                        groupValue: selectedChoice,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedChoice = value!;
-                          });
-                        },
-                      ),
-                      Text("True",style: lightTheme.textTheme.titleSmall!.apply(
-                        fontSizeFactor: 1.sp,
-                        color: AppColors.myNavy,
-                      ),),
-                      SizedBox(width: 20),
-                      Radio(activeColor: AppColors.myRed,
-                        value: false,
-                        groupValue: selectedChoice,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedChoice = value!;
-                          });
-                        },
-                      ),
-                      Text("False",style: lightTheme.textTheme.titleSmall!.apply(
-                        fontSizeFactor: 1.sp,
-                        color: AppColors.myRed,
-                      ),),
-                    ],
-                  ),
-                ),
                 SizedBox(height: 30.h,),
                 CustomTextFormField(
                   validator: (data) {
@@ -241,7 +185,7 @@ class _UpdateCategoryBodyState extends State<UpdateCategoryBody> {
                           else{
                             CategoryCubit.get(context).updateCagetory(
                                 id:widget.id,
-                                isDeleted: selectedChoice
+                                isDeleted: true
                                 , name: widget.nameCategoryController.text,
                                 description: widget.descriptionController.text,
                                 totalProducts:priceProd
